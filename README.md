@@ -1,46 +1,88 @@
-# Getting Started with Create React App
+# Calorie Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple calorie tracking application built with React, TypeScript, and Tailwind CSS. This application allows users to set a daily calorie limit, track meals and workouts, and see their progress towards their daily goal.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Set and update daily calorie limit
+- Add and remove meals with calorie information
+- Add and remove workouts with calorie burn information
+- Calculate and display daily calorie consumption, burn, and remaining calories
+- Visual progress bar with color indicators for calorie consumption levels
+- Responsive design with clean and modern UI
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React
+- TypeScript
+- Tailwind CSS
+- React Icons
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+![image](https://github.com/chavez62/react-calorie-tracker-master/assets/67764701/b0dc2a98-358d-4f69-b2e0-962fc11ba885)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Make sure you have Node.js and npm installed on your machine. You can download them from [nodejs.org](https://nodejs.org/).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/calorie-tracker.git
+    cd calorie-tracker
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Start the development server:
+    ```bash
+    npm start
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. Open your browser and navigate to `http://localhost:3000` to see the application in action.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Usage
 
-## Learn More
+### Setting Daily Calorie Limit
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Click on the "Set Daily Limit" button to open the modal. Enter your daily calorie limit and click "Save".
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Adding Meals
+
+Enter the meal name and calories in the "Meals / Food Items" section and click "Add Meal Item". The meal will be added to the list and the progress bar will update accordingly.
+
+### Adding Workouts
+
+Enter the workout name and calories burned in the "Workouts" section and click "Add Workout". The workout will be added to the list and the progress bar will update accordingly.
+
+### Resetting the Day
+
+Click the "Reset Day" button to reset the daily calorie limit, meals, and workouts.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+
+## Contact
+
+If you have any questions, feel free to contact me at [your-email@example.com](mailto:your-email@example.com).
