@@ -8,7 +8,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ resetDay, openModal }) => {
   return (
-    <div className="bg-pink-600 p-4 flex justify-between items-center text-white">
+    <div className="bg-pink-500 p-4 flex justify-between items-center text-white">
       <h1 className="text-2xl flex items-center">
         <FaUtensils className="mr-2" /> Calorie Tracker
       </h1>
