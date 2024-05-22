@@ -18,29 +18,27 @@ const Stats: React.FC<StatsProps> = ({ dailyLimit, meals, workouts }) => {
   return (
     <div className="p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="bg-gray-900 text-white p-4 rounded">
-          <h2 className="text-2xl text-center">{dailyLimit}</h2>
-          <p className="text-center">Daily Calorie Limit</p>
+        <div className="bg-gray-900 text-white p-4 rounded flex flex-col justify-center items-center">
+          <h2 className="text-2xl">{dailyLimit}</h2>
+          <p>Daily Calorie Limit</p>
         </div>
-        <div className="bg-green-600 text-white p-4 rounded">
-          <h2 className="text-2xl text-center">
-            {isNaN(gainLoss) ? 0 : gainLoss}
-          </h2>
-          <p className="text-center">Gain/Loss</p>
+        <div className="bg-green-600 text-white p-4 rounded flex flex-col justify-center items-center">
+          <h2 className="text-2xl">{gainLoss}</h2>
+          <p>Gain/Loss</p>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-        <div className="bg-gray-200 text-gray-900 p-4 rounded">
-          <h2 className="text-2xl text-center">{caloriesConsumed}</h2>
-          <p className="text-center">Calories Consumed</p>
+        <div className="bg-gray-200 text-gray-900 p-4 rounded flex flex-col justify-center items-center">
+          <h2 className="text-2xl">{caloriesConsumed}</h2>
+          <p>Calories Consumed</p>
         </div>
-        <div className="bg-gray-200 text-gray-900 p-4 rounded">
-          <h2 className="text-2xl text-center">{caloriesBurned}</h2>
-          <p className="text-center">Calories Burned</p>
+        <div className="bg-gray-200 text-gray-900 p-4 rounded flex flex-col justify-center items-center">
+          <h2 className="text-2xl">{caloriesBurned}</h2>
+          <p>Calories Burned</p>
         </div>
-        <div className="bg-gray-200 text-gray-900 p-4 rounded">
-          <h2 className="text-2xl text-center">{caloriesRemaining}</h2>
-          <p className="text-center">Calories Remaining</p>
+        <div className="bg-gray-200 text-gray-900 p-4 rounded flex flex-col justify-center items-center">
+          <h2 className="text-2xl">{caloriesRemaining}</h2>
+          <p>Calories Remaining</p>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
 
 interface LimitModalProps {
@@ -16,9 +16,20 @@ const LimitModal: React.FC<LimitModalProps> = ({
 }) => {
   const [limit, setLimit] = useState(currentLimit);
 
+  useEffect(() => {
+    setLimit(currentLimit);
+  }, [currentLimit]);
+
   const handleSave = () => {
     setDailyLimit(limit);
     onClose();
+  };
+
+  const handleKeyPress = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      handleSave();
+    }
   };
 
   if (!isOpen) return null;
@@ -38,6 +49,7 @@ const LimitModal: React.FC<LimitModalProps> = ({
             type="number"
             value={limit}
             onChange={(e) => setLimit(parseInt(e.target.value) || 0)}
+            onKeyPress={handleKeyPress}
             className="p-2 border rounded w-full"
           />
         </div>

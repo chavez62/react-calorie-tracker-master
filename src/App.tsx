@@ -47,7 +47,7 @@ const App: React.FC = () => {
   }, [workouts]);
 
   const resetDay = () => {
-    setDailyLimit(0); // Reset daily limit to 0
+    setDailyLimit(0);
     setMeals([]);
     setWorkouts([]);
   };

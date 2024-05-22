@@ -12,7 +12,8 @@ const Progress: React.FC<ProgressProps> = ({ dailyLimit, meals, workouts }) => {
     (acc, workout) => acc + workout.calories,
     0
   );
-  const progress = ((caloriesConsumed - caloriesBurned) / dailyLimit) * 100;
+  const netCalories = caloriesConsumed - caloriesBurned;
+  const progress = dailyLimit > 0 ? (netCalories / dailyLimit) * 100 : 0;
 
   let progressBarColor = "bg-green-600";
   if (progress >= 50 && progress <= 75) {
@@ -26,7 +27,7 @@ const Progress: React.FC<ProgressProps> = ({ dailyLimit, meals, workouts }) => {
       <div className="w-full bg-gray-200 rounded-full h-4">
         <div
           className={`${progressBarColor} h-4 rounded-full`}
-          style={{ width: `${progress}%` }}
+          style={{ width: `${Math.min(progress, 100)}%` }}
         ></div>
       </div>
     </div>
