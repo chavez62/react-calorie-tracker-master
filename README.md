@@ -20,7 +20,7 @@ A simple calorie tracking application built with React, TypeScript, and Tailwind
 
 ## Screenshots
 
-![image](https://github.com/chavez62/react-calorie-tracker-master/assets/67764701/1a6acb9e-b9f0-421e-8b01-aab1fd605425)
+![image](https://github.com/chavez62/react-calorie-tracker-master/assets/67764701/db5bd52c-b834-40bc-b76d-98ac1649166a)
 
 ## Getting Started
 
