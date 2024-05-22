@@ -17,12 +17,22 @@ const LimitModal: React.FC<LimitModalProps> = ({
   const [limit, setLimit] = useState(currentLimit);
 
   useEffect(() => {
-    setLimit(currentLimit);
-  }, [currentLimit]);
+    if (isOpen) {
+      setLimit(currentLimit); // Ensure the input field is initialized with the current limit
+    }
+  }, [isOpen, currentLimit]);
 
   const handleSave = () => {
     setDailyLimit(limit);
     onClose();
+  };
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    // Allow empty value or numerical value
+    if (value === "" || /^[0-9\b]+$/.test(value)) {
+      setLimit(Number(value));
+    }
   };
 
   const handleKeyPress = (event: React.KeyboardEvent) => {
@@ -46,9 +56,9 @@ const LimitModal: React.FC<LimitModalProps> = ({
         <div className="mb-4">
           <label className="block text-gray-700">Daily Calorie Limit</label>
           <input
-            type="number"
-            value={limit}
-            onChange={(e) => setLimit(parseInt(e.target.value) || 0)}
+            type="text"
+            value={limit === 0 ? "" : limit}
+            onChange={handleInputChange}
             onKeyPress={handleKeyPress}
             className="p-2 border rounded w-full"
           />
