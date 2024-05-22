@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Stats from "./components/Stats";
 import Items from "./components/Items";
@@ -13,6 +13,38 @@ const App: React.FC = () => {
     { name: string; calories: number }[]
   >([]);
   const [isModalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Load data from local storage on initial render
+    const savedDailyLimit = localStorage.getItem("dailyLimit");
+    const savedMeals = localStorage.getItem("meals");
+    const savedWorkouts = localStorage.getItem("workouts");
+
+    if (savedDailyLimit) {
+      setDailyLimit(parseInt(savedDailyLimit));
+    }
+    if (savedMeals) {
+      setMeals(JSON.parse(savedMeals));
+    }
+    if (savedWorkouts) {
+      setWorkouts(JSON.parse(savedWorkouts));
+    }
+  }, []);
+
+  useEffect(() => {
+    // Save dailyLimit to local storage whenever it changes
+    localStorage.setItem("dailyLimit", dailyLimit.toString());
+  }, [dailyLimit]);
+
+  useEffect(() => {
+    // Save meals to local storage whenever it changes
+    localStorage.setItem("meals", JSON.stringify(meals));
+  }, [meals]);
+
+  useEffect(() => {
+    // Save workouts to local storage whenever it changes
+    localStorage.setItem("workouts", JSON.stringify(workouts));
+  }, [workouts]);
 
   const resetDay = () => {
     setDailyLimit(0); // Reset daily limit to 0
